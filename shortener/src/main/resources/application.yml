@@ -1,0 +1,19 @@
+jwt:
+  secret: ${URL_AUTH_SECRET}
+spring:
+  application:
+    name: shortener-depl
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      database: url-shortener
+server:
+  port: 8000
+  error:
+    include-message: always
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
